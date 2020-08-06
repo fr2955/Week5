@@ -45,7 +45,7 @@ public class Array {
                 temp = n;
 
         }
-        this.pointerArray[this.rear] = temp;
+        this.pointerArray[this.rear] = temp + 1;
         this.pointerArray[temp] = this.rear;
 
 
