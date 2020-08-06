@@ -53,23 +53,39 @@ public class Array {
 
     public void removeElement (char y){
         char toRemove = y;
-        int tempInt;
+        int tempInt = 0;
+        int tempInt2 = 0;
         char tempChar;
-
-        for(int n = 0; n <= this.rear; n++){
-            if(toRemove == y)
+        boolean start;
+        for(int n = 0; n <= this.rear; n++) {
+            if (this.arrayList[n] == toRemove) {
                 tempInt = n;
+                tempInt2 = this.pointerArray[n];
+                for (int i = 0; i <= this.rear; i++) {
+                    if(this.pointerArray[i] == 1 - tempInt2){
+                        this.pointerArray[i] = tempInt2;
+                    }
+
+                }
+            }
+        }
+
+
+        for (int i = tempInt; i <= this.rear && i >= 0; i = this.pointerArray[i]) {
+
+            pointerArray[i] = pointerArray[i +1];
+
         }
 
     }  //remove element method header h
-    public void ArrayPrinter(){
+    public void ArrayPrinter() {
         int direction = 0;
         int n = 0;
 
-        for(int i = 0; i <= this.rear && i >= 0; i = this.pointerArray[i]){
+        for (int i = 0; i <= this.rear && i >= 0; i = this.pointerArray[i]) {
 
             System.out.print(this.arrayList[i] + ", ");
 
+        }
     }
-
-}}
+}

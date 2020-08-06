@@ -9,5 +9,7 @@ public class Main {
     array.ArrayPrinter();
     array.insertElement('C', 'B');
     array.ArrayPrinter();
+    array.removeElement('c');
+    array.ArrayPrinter();
     }
 }
